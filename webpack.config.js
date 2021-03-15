@@ -1,9 +1,11 @@
 const path = require('path');
 const HtmlWebpackPlugin = require('html-webpack-plugin')
 
+const isDevelopment = process.env.NODE_ENV !== 'production'; //variavel de ambiente que irá chegar se estamos em production ou development
+
 module.exports = {
-    mode: 'development',
-    devtool: 'eval-source-map',
+    mode: isDevelopment ? 'development' : 'production', // if ternário para validar se o ambiente é production ou development
+    devtool: isDevelopment ? 'eval-source-map' : 'source-map', // if ternário para validar se estivermos em dev usaremos o eval-source-map, caso seja PRD usamos source-map
 	entry: path.resolve(__dirname, "src", "index.jsx"),
 	output: {
 		path: path.resolve(__dirname, "dist"),
