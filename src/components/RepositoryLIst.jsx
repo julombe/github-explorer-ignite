@@ -14,13 +14,10 @@ export function Repository() {
 
 
             <ul>
-                <RepositoryItem     
-                repository="unform2"
-                description="Forms in React"
-                link="https://github.com/unform/unform"/>
-                <RepositoryItem />
-                <RepositoryItem />
-                <RepositoryItem />
+                <RepositoryItem repository={repository} />
+                <RepositoryItem repository={repository} />
+                <RepositoryItem repository={repository} />
+                <RepositoryItem repository={repository} />
             </ul>
         </section>
     );
