@@ -2,7 +2,7 @@ export function Counter() {
 
     let counter = 0;
     function increment() {
-        console.log('Incrementing');
+        counter += 1;
     }
     return(
         <div>
