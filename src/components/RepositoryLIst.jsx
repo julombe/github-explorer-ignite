@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import { RepositoryItem } from "./RepositoryItem";
 
 import '../styles/repositories.scss';
@@ -14,6 +14,10 @@ const repository = {
 
 export function RepositoryLIst() {
     const [repositories, setRepositories] = useState([]);
+
+    useEffect(() => {
+
+    }, [repositories]);
 
 
     return (
