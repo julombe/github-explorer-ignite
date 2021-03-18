@@ -7,7 +7,7 @@ const repository = {
 }
 
 
-export function Repository() {
+export function RepositoryLIst() {
     return (
         <section className="repository-list">
             <h1>Lista de repositórios</h1>
