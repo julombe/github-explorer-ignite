@@ -10,7 +10,8 @@ export function Counter() {
         <div>
             <h2>{counter}</h2>
             <button type="button" onClick={increment}>
-                Increment</button>
+                Increment
+            </button>
         </div>
     );
 }

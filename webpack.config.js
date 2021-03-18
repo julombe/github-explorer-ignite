@@ -1,6 +1,7 @@
 const path = require('path');
 const HtmlWebpackPlugin = require('html-webpack-plugin')
-const ReactRefreshWebpackPlugin = require('@pmmmwh/react-refresh-webpack-plugin')
+const ReactRefreshWebpackPlugin = require('@pmmmwh/react-refresh-webpack-plugin');
+const loader = require('sass-loader');
 
 const isDevelopment = process.env.NODE_ENV !== 'production'; //variavel de ambiente que irá chegar se estamos em production ou development
 
@@ -30,7 +31,14 @@ module.exports = {
 			{
 				test: /\.jsx$/,
 				exclude: /node_modules/,
-				use: "babel-loader"
+				use: {
+					loader: 'babel-loader',
+					options: {
+						plugins: [
+							isDevelopment && require.resolve('react-refresh/babel')
+						].filter(Boolean)
+					}
+				},
 			},
             {
                 test: /\.scss$/,
