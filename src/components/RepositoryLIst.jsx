@@ -20,10 +20,10 @@ export function RepositoryLIst() {
 
 
             <ul>
-                <RepositoryItem repository={repository} />
-                <RepositoryItem repository={repository} />
-                <RepositoryItem repository={repository} />
-                <RepositoryItem repository={repository} />
+                {repositories.map( repository => {
+                    return  <RepositoryItem repository={repository} />
+                })}
+               
             </ul>
         </section>
     );
