@@ -3,7 +3,7 @@ import { RepositoryItem } from "./RepositoryItem";
 
 import '../styles/repositories.scss';
 
-//https://api.github.com/orgs/rocketseat/repos
+
 
 const repository = {
     name: 'unform',
@@ -16,8 +16,10 @@ export function RepositoryLIst() {
     const [repositories, setRepositories] = useState([]);
 
     useEffect(() => {
-
-    }, [repositories]);
+        fetch('https://api.github.com/orgs/rocketseat/repos')
+        .then(response => response.json())
+        .then(data => setRepositories(data))
+    }, []);
 
 
     return (
